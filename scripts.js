@@ -29,27 +29,31 @@ const logTodos = () => {
 }
 
 const populateTodos = () => {
-  for (let i = lastIndex; i < indexLimit; i++, lastIndex++) {
-    let element = document.createElement('li')
-    let button = document.createElement('button')
-    button.style.marginLeft = '10px'
-    if (!arrayOfTodos[i].completed) {
-      element.style.setProperty('color', 'red')
-      button.innerHTML = 'Done'
-      button.style.setProperty('color', 'black')
-      button.addEventListener('click', function() {
-        this.style.setProperty('visibility', 'hidden')
-        this.parentElement.style.setProperty('text-decoration', 'line-through')
-        this.parentElement.style.removeProperty('color')
-        arrayOfTodos[i].completed = true
-      })
+  if (indexLimit <= 100) {
+    for (let i = lastIndex; i < indexLimit; i++, lastIndex++) {
+      let element = document.createElement('li')
+      let button = document.createElement('button')
+      button.style.marginLeft = '10px'
+      if (!arrayOfTodos[i].completed) {
+        element.style.setProperty('color', 'red')
+        button.innerHTML = 'Done'
+        button.style.setProperty('color', 'black')
+        button.addEventListener('click', function() {
+          this.style.setProperty('visibility', 'hidden')
+          this.parentElement.style.setProperty(
+            'text-decoration',
+            'line-through'
+          )
+          this.parentElement.style.removeProperty('color')
+          arrayOfTodos[i].completed = true
+        })
+      } else {
+        button.style.setProperty('visibility', 'hidden')
+      }
+      element.appendChild(document.createTextNode(arrayOfTodos[i].title))
+      element.appendChild(button)
+      list.appendChild(element)
     }
-    else {
-      button.style.setProperty('visibility', 'hidden')
-    }
-    element.appendChild(document.createTextNode(arrayOfTodos[i].title))
-    element.appendChild(button)
-    list.appendChild(element)
   }
   indexLimit += 20
 }
