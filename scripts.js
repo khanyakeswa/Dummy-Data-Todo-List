@@ -1,6 +1,5 @@
 // We'll pre-populate this array with a couple objects just so it's not undefined if your internet connection isn't working properly.
 const list = document.getElementById('todo-list')
-var listItems = document.querySelector('li')
 var lastIndex = 0
 var indexLimit = 20
 
