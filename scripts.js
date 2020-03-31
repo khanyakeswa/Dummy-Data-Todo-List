@@ -32,7 +32,7 @@ const populateTodos = () => {
   for (let i = lastIndex; i < indexLimit; i++, lastIndex++) {
     let element = document.createElement('li')
     let button = document.createElement('button')
-    button.style.setProperty('margin-left', '10px')
+    button.style.marginLeft = '10px'
     if (!arrayOfTodos[i].completed) {
       element.style.setProperty('color', 'red')
       button.innerHTML = 'Done'
