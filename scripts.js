@@ -29,7 +29,7 @@ const logTodos = () => {
 }
 
 const populateTodos = () => {
-  if (indexLimit <= 200) {
+  if (!indexLimit > 200) {
     for (let i = lastIndex; i < indexLimit; i++, lastIndex++) {
       let element = document.createElement('li')
       let button = document.createElement('button')
@@ -54,6 +54,6 @@ const populateTodos = () => {
       element.appendChild(button)
       list.appendChild(element)
     }
+    indexLimit += 20
   }
-  indexLimit += 20
 }
