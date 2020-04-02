@@ -39,8 +39,12 @@ const logTodos = () => {
 }
 
 const populateTodos = () => {
+  logTodos()
   if (isPopulated && isFiltered) {
     const listContent = document.querySelectorAll('li')
+    indexLimit = 20
+    lastIndex = 0
+    isPopulated = false
     for (let i = 0; i < listContent.length; i++) {
       list.removeChild(listContent[i])
     }
