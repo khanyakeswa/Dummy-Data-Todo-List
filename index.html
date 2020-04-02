@@ -15,6 +15,15 @@
     <button onclick="fetchTodos()">Fetch Todos</button>
     <button onclick="logTodos()">Log Todos</button>
     <button onclick="populateTodos()">Populate Todos</button>
+    <br>
+    <br>
+    <label for="id-input">User ID (1 - 10):</label>
+    <input type="number" id="id-input" size="10" name="idNumber">
+    <button onclick="populateFilteredTodos()">Filter Todos</button>
+    <br>
+    <br>
+    <button onclick="filterCompleteTodos(true)">Show Complete Todos</button>
+    <button onclick="filterCompleteTodos(false)">Show Incomplete Todos</button>
     <ol id="todo-list">
     </ol>
   </body>
